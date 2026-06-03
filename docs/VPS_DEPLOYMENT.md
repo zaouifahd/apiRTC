@@ -22,12 +22,20 @@ Le fichier `docker-compose.prod.yml` lance ces services en production. Seul Cadd
 
 ## Préparer le VPS
 
-Sur le VPS :
+Sur le VPS, installer Docker avant de lancer `docker compose`. Si la commande `docker` répond `Command 'docker' not found`, exécuter :
 
 ```bash
-sudo apt update
-sudo apt install -y git curl ca-certificates docker.io docker-compose-plugin
-sudo systemctl enable --now docker
+apt update
+apt install -y git curl ca-certificates docker.io docker-compose-plugin
+systemctl enable --now docker
+docker --version
+docker compose version
+```
+
+Alternative depuis le dépôt, après `git clone` :
+
+```bash
+./scripts/install-vps-docker.sh
 ```
 
 Créer un dossier pour l'application :

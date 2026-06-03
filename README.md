@@ -33,9 +33,10 @@ npm run dev
 
 ## Déploiement direct sur VPS
 
-Pour lancer AFRITE directement sur un VPS Ubuntu avec Caddy, PostgreSQL, Meilisearch et MinIO :
+Pour lancer AFRITE directement sur un VPS Ubuntu avec Caddy, PostgreSQL, Meilisearch et MinIO, Docker doit d’abord être installé :
 
 ```bash
+./scripts/install-vps-docker.sh
 cp .env.production.example .env.production
 docker compose -f docker-compose.prod.yml --env-file .env.production up -d --build
 ```
