@@ -31,10 +31,20 @@ npm install
 npm run dev
 ```
 
+## Déploiement direct sur VPS
+
+Pour lancer AFRITE directement sur un VPS Ubuntu avec Caddy, PostgreSQL, Meilisearch et MinIO :
+
+```bash
+cp .env.production.example .env.production
+docker compose -f docker-compose.prod.yml --env-file .env.production up -d --build
+```
+
 ## Documentation projet
 
 - [Architecture complète](docs/ARCHITECTURE.md)
 - [Roadmap et plan 12 phases](docs/ROADMAP.md)
 - [Wireframes mobile et desktop](docs/WIREFRAMES.md)
 - [SEO et collecte de données](docs/SEO_DATA.md)
-- [Déploiement Docker](docker/README.md)
+- [Déploiement Docker local](docker/README.md)
+- [Déploiement direct sur VPS Ubuntu](docs/VPS_DEPLOYMENT.md)
