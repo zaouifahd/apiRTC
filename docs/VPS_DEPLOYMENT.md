@@ -26,13 +26,14 @@ Sur le VPS, installer Docker avant de lancer `docker compose`. Si la commande `d
 
 ```bash
 apt update
-apt install -y git curl ca-certificates docker.io docker-compose-plugin
+apt install -y git curl ca-certificates docker.io
+apt install -y docker-compose-v2 || apt install -y docker-compose-plugin
 systemctl enable --now docker
 docker --version
 docker compose version
 ```
 
-Alternative depuis le dépôt, après `git clone` :
+Sur Ubuntu 24.04/Noble, le paquet Compose peut s'appeler `docker-compose-v2` au lieu de `docker-compose-plugin`. Le script du dépôt gère ce fallback automatiquement. Alternative depuis le dépôt, après `git clone` :
 
 ```bash
 ./scripts/install-vps-docker.sh
