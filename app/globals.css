@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-sand text-night antialiased;
+}
+
+.afrite-card {
+  @apply rounded-3xl border border-white/60 bg-white/80 shadow-glow backdrop-blur;
+}
